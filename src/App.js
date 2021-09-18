@@ -16,6 +16,8 @@ import Profile from './user/profile';
 import Dashboard from './user/dashboard';
 import UpdateUser from './user/updatestatus';
 import VerifyDocuments from "./user/VerifyDocuments"
+import TrackDriver from './user/TrackDriver';
+import WalletLogs from './user/WalletLogs'
 function App() {
 
   useEffect(()=>{
@@ -39,6 +41,8 @@ function App() {
 <Route path="/admin/driver/details/:id"  component={Details} exact/>
 <Route path="/admin/driver/vehicledetails/:id"  component={Vehicle} exact/>
 <Route path="/verifyDocuments" component={VerifyDocuments} exact></Route>
+<Route path="/trackDriver" component={TrackDriver} exact></Route>
+<Route path="/walletLogs" component={WalletLogs} exact></Route>
 
 
    </Router>

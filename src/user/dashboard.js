@@ -118,8 +118,8 @@ const setdrivers = () => {
             Action:
             <DropdownButton className="but" id="dropdown-button-dark-example1" variant="secondary" title="Actions">
              <Dropdown.Item href="./verifyDocuments">Add & verify documents</Dropdown.Item>
-             <Dropdown.Item href="#/action-2">Track Driver</Dropdown.Item>
-             <Dropdown.Item href="#/action-3">View wallet logs</Dropdown.Item>
+             <Dropdown.Item href="./trackDriver">Track Driver</Dropdown.Item>
+             <Dropdown.Item href="./walletLogs">View wallet logs</Dropdown.Item>
              <Dropdown.Item href="#/action-3">Update profile</Dropdown.Item>
              <Dropdown.Item href="#/action-3">Detail Profile</Dropdown.Item>
             </DropdownButton>,
