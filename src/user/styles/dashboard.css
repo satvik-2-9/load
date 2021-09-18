@@ -1,0 +1,29 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
+.tp{
+    padding:2%;
+    display: flex;
+}
+.title{
+    padding-left: 5px;
+    padding-right:5px;
+}
+.constraints{
+    display: flex;
+    width: 100%;
+}
+.butt{
+    margin-right: 10px;
+}
+.but{
+    padding: .375rem 2rem !important;
+}
+.row2{
+    padding-left: 2%;
+}
+.img{
+    size: auto;
+}
+.my-5{
+    padding-left: 3%;
+}

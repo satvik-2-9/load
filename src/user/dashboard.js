@@ -2,8 +2,10 @@ import React,{Fragment,useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { allUsers } from '../actions/authactions'
 import { MDBDataTable } from 'mdbreact'
-
-import '../App.css'
+import { DropdownButton, Dropdown,Button } from 'react-bootstrap'
+import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
+import './styles/dashboard.css'
+import pc from './pc.png'
 import {Link} from 'react-router-dom'
 const Dashboard=({match})=>{
     const dispatch= useDispatch();
@@ -33,6 +35,21 @@ const setdrivers = () => {
                 sort: 'asc'
             },
             {
+                label: 'Status',
+                field: 'Status',
+                sort:'asc'
+            },
+            {
+                label: 'Balance',
+                field: 'Balance',
+                sort:'asc'
+            },
+            {
+                label: 'Online',
+                field: 'Online',
+                sort:'asc'
+            },
+            {
                 label: 'Name',
                 field: 'drivername',
                 sort: 'asc'
@@ -43,37 +60,44 @@ const setdrivers = () => {
                 sort: 'asc'
             },
             {
+                label: 'pic',
+                field: 'pic',
+                sort:'asc'
+            },
+            {
                 label: 'vehicle type',
                 field: 'vehicletype',
             },
             {
+                label: 'Reffered By',
+                field: 'RefferedBy',
+                sort:'asc'
+            },
+            {
+                label: 'Action',
+                field: 'Action',
+                sort:'asc'
+            },
+            {
+                label: 'Orders',
+                field: 'Ordeers',
+                sort:'asc'
+            },
+            {
+                label: 'Reviews',
+                field: 'Reviews',
+                sort:'asc'
+            },
+            {
                 label: 'created By',
-                field: 'createdby',
+                field: 'createdBy',
                 sort: 'asc'
             },
             {
-                label: 'created At',
-                field: 'createdAt',
+                label: 'Registered on',
+                field: 'RegisteredOn',
                 sort: 'asc'
-            },
-            {
-                label: 'Approved',
-                field: 'status',
-                sort: 'asc'
-            },
-            
-            {
-                label: 'Approved Driver',
-                field: 'options',
-            },
-            {
-                label: 'More Details',
-                field: 'Details',
-            },
-            {
-                label: 'Vehicle Details',
-                field: 'Vehicle',
-            },
+            }
         ],
         rows: []
     }
@@ -82,14 +106,23 @@ const setdrivers = () => {
         data.rows.push({
 
             id: user._id,
+            /* status: user.status,
+            Balance: user.balance,
+            online: user.online, */
             drivername: user.firstname,
             Phone_No: user.Phone_No,
-            
+            pic:<img src="https://partners.olacabs.com/public/img/type2.98e5661.png" className="img"></img>,
             vehicletype:user.VehicleType,
             createdby:"App",
             createdAt:user.createdAt,
-            status:user.status,
-
+            Action:
+            <DropdownButton className="but" id="dropdown-button-dark-example1" variant="secondary" title="Actions">
+             <Dropdown.Item href="#/action-1">Add & verify documents</Dropdown.Item>
+             <Dropdown.Item href="#/action-2">Track Driver</Dropdown.Item>
+             <Dropdown.Item href="#/action-3">View wallet logs</Dropdown.Item>
+             <Dropdown.Item href="#/action-3">Update profile</Dropdown.Item>
+             <Dropdown.Item href="#/action-3">Detail Profile</Dropdown.Item>
+            </DropdownButton>,
             options: <Fragment>
               
                      {/* <button onClick={(e)=>handler(e,user._id) }
@@ -129,15 +162,51 @@ const setdrivers = () => {
     return data;
 }
 
-return (
+    return (
     <Fragment>
-       
-      
+          
 
             <div className="col-12 col-md-10">
                 <Fragment>
                     <h1 className="my-5">All Drivers</h1>
-
+                    <div> 
+            <div className="constraints">
+               <div className="tp"><span className="title">Status:</span>
+                 <DropdownButton className="but" id="dropdown-button-dark-example1"  variant="secondary" title="All">
+                    <Dropdown.Item href="#/action-1">All</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Acitve</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Blocked</Dropdown.Item>
+                </DropdownButton>
+                </div>
+                <div className="tp"><span className="title">Approved:</span> <DropdownButton className="but" id="dropdown-button-dark-example1"  variant="secondary" title="All">
+                    <Dropdown.Item href="#/action-1">All</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Approved</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Pending</Dropdown.Item>
+                </DropdownButton>
+                </div>
+                <div className="tp"><span className="title">online:</span> <DropdownButton className="but" id="dropdown-button-dark-example1"  variant="secondary" title="online">
+                    <Dropdown.Item href="#/action-1">All</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">online</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">offline</Dropdown.Item>
+                </DropdownButton>
+                </div>
+                <div className="tp"><span className="title">From Date:</span> 
+                  <DatePickerComponent placeholder="Select Date"></DatePickerComponent>
+                </div>
+                <div className="tp"><span className="title">To Date:</span> 
+                  <DatePickerComponent placeholder="Select Date"></DatePickerComponent>
+                </div>
+                
+              
+            </div>
+                <div className="row2">
+                          
+                <Button variant="secondary" className="butt">Filter</Button>
+                <Button variant="secondary" className="butt">Export to Excel </Button>
+                <input type="text" placeholder="Search"></input>
+               </div>
+                
+            </div>
                     {loading ?<h2> data not available</h2> : (
                         <MDBDataTable
                             data={setdrivers()}

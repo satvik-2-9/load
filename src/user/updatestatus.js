@@ -23,13 +23,6 @@ const UpdateUser = ({ history, match }) => {
 
     useEffect(() => {
 
-        console.log(user && user._id !== userId);
-        if (user && user._id !== userId) {
-            dispatch(getdriverDetails(userId))
-        } else {
-          
-            setstatus(user.status)
-        }
            
       if(isUpdated){
              history.push('/dashboard')

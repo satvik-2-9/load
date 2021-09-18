@@ -22,10 +22,7 @@ export const Login=({history})=>{
         //    alert.error(error)
             dispatch(clearerrors())
         }
-
-
-
-    },[dispatch,isAuthenicated,error,history])
+    },[])
 
     
     const submithandler=(e)=>{
@@ -38,8 +35,7 @@ export const Login=({history})=>{
    
         <Fragment>
 
-                  
-                      <div className="row wrapper"> 
+  <div className="row wrapper"> 
 		<div className="col-10 col-lg-5">
         <form className="shadow-lg" onSubmit={submithandler}>
             <h1 className="mb-3 login">Login</h1>

@@ -23,9 +23,11 @@ function App() {
  
   return (
    <Router> 
-    <Header/>
-
-     <Route path="/register"  component={Register} exact />
+   
+     <Route path="/register">
+     <Header/>
+     <Register/> 
+     </Route>
      <Route path="/login"  component={Login} exact /> 
       <Route path="/logout" component={Log} exact/>
 
