@@ -15,6 +15,7 @@ import ProtectedRoute from './user/route.js'
 import Profile from './user/profile';
 import Dashboard from './user/dashboard';
 import UpdateUser from './user/updatestatus';
+import VerifyDocuments from "./user/VerifyDocuments"
 function App() {
 
   useEffect(()=>{
@@ -37,7 +38,7 @@ function App() {
 <Route path="/admin/driver/:id"  component={UpdateUser} exact/>
 <Route path="/admin/driver/details/:id"  component={Details} exact/>
 <Route path="/admin/driver/vehicledetails/:id"  component={Vehicle} exact/>
-
+<Route path="/verifyDocuments" component={VerifyDocuments} exact></Route>
 
 
    </Router>

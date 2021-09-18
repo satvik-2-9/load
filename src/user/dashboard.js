@@ -5,8 +5,8 @@ import { MDBDataTable } from 'mdbreact'
 import { DropdownButton, Dropdown,Button } from 'react-bootstrap'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
 import './styles/dashboard.css'
-import pc from './pc.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 const Dashboard=({match})=>{
     const dispatch= useDispatch();
    const {users,loading}=useSelector(state=>state.alluser)
@@ -117,7 +117,7 @@ const setdrivers = () => {
             createdAt:user.createdAt,
             Action:
             <DropdownButton className="but" id="dropdown-button-dark-example1" variant="secondary" title="Actions">
-             <Dropdown.Item href="#/action-1">Add & verify documents</Dropdown.Item>
+             <Dropdown.Item href="./verifyDocuments">Add & verify documents</Dropdown.Item>
              <Dropdown.Item href="#/action-2">Track Driver</Dropdown.Item>
              <Dropdown.Item href="#/action-3">View wallet logs</Dropdown.Item>
              <Dropdown.Item href="#/action-3">Update profile</Dropdown.Item>
