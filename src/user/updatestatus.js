@@ -8,7 +8,7 @@ import { updateUser ,getdriverDetails} from '../actions/authactions'
 const UpdateUser = ({ history, match }) => {
 
    // const {users,loading}=useSelector(state=>state.alluser)
-    const {user}=useSelector(state=>state.driverdetails)
+    const {driver}=useSelector(state=>state.driverdetails)
     const {isUpdated}=useSelector(state=>state.user)
 
 
@@ -20,10 +20,15 @@ const UpdateUser = ({ history, match }) => {
     
 
     const userId = match.params.id;
-
+console.log(userId);
     useEffect(() => {
+ if(driver && driver._id!==userId){
+           dispatch(getdriverDetails(userId))
+ }
+ else {
+    setstatus(driver.status)
+ }
 
-           
       if(isUpdated){
              history.push('/dashboard')
       }
@@ -32,7 +37,7 @@ const UpdateUser = ({ history, match }) => {
          
         
 
-    }, [dispatch,userId,isUpdated,history,user])
+    }, [dispatch,userId,isUpdated,history,driver])
     
   
     const updateOrderHandler = (e,id) => {
@@ -77,7 +82,7 @@ const UpdateUser = ({ history, match }) => {
                                     </select>
                                 </div>
 
-                                <button className="btn btn-primary btn-block" onClick={(e)=>updateOrderHandler(e,user._id)}>
+                                <button className="btn btn-primary btn-block" onClick={(e)=>updateOrderHandler(e,driver._id)}>
                                 Update Status
                                     </button>
                             </form>

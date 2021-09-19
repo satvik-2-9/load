@@ -18,7 +18,14 @@ UPDATE_USER_SUCCESS,
 UPDATE_USER_FAIL,
 USER_DETAILS_REQUEST,
     USER_DETAILS_SUCCESS,
-    USER_DETAILS_FAIL} from '../constants/authconstants.js'
+    USER_DETAILS_FAIL,
+    UPLOAD_REQUEST,
+    UPLOAD_SUCCESS,
+    UPLOAD_FAIL,
+    UPDATE_IMAGES_REQUEST,
+    UPDATE_IMAGES_SUCCESS,
+    UPDATE_IMAGES_FAIL} from '../constants/authconstants.js'
+    
 
 import axios from 'axios'
 export const login=(email,password)=>async(dispatch)=>{
@@ -165,6 +172,52 @@ export const getdriverDetails = (id) => async (dispatch) => {
     }
 }
 
+export const upload=(images)=>async(dispatch)=>{
+    try {
+
+        dispatch({ type: UPLOAD_REQUEST })
+
+      
+
+
+        const { data } = await axios.post('/api/admin/upload',images)
+        console.log(data);
+        dispatch({
+            type: UPLOAD_SUCCESS,
+            payload: data
+        })
+   
+    } catch (error) {
+        dispatch({
+            type: UPLOAD_FAIL,
+            payload: error.response
+        })
+    }
+}
+export const update=(id,userData)=>async(dispatch)=>{
+    try {
+        dispatch({ type: UPDATE_IMAGES_REQUEST })
+
+        const config={
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }
+
+        const { data } = await axios.put(`/api/admin/update/driver/${id}`,{userdata:userData},config)
+        console.log(userData);
+        dispatch({
+            type: UPDATE_IMAGES_SUCCESS,
+            payload: data
+        })
+   
+    } catch (error) {
+        dispatch({
+            type: UPDATE_IMAGES_FAIL,
+            payload: error.response
+        })
+    }
+}
 export const logindriver=(Phone_No,password)=>async(dispatch)=>{
     try {
         dispatch({type:LOGIN_REQUEST})

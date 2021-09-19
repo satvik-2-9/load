@@ -22,17 +22,17 @@ const Header = () => {
                 
 <div className="navbar">
       {user  ? (<div>
-        <h1 className="heading">Welcome to app</h1>
+        {/* <h1 className="heading">Welcome to app</h1> */}
 
        {user&& user.role==="admin" &&(
-         <Link to="/dashboard" >Dashboard</Link>
+         <Link to="/dashboard"  >Dashboard</Link>
        )}
 <hr />
      <Link className="text-danger" to="/" onClick={logoutHandler}>
       Logout
      </Link>
      <hr />
-     <Link to="/profile">profile</Link>
+     {/* <Link to="/profile">profile</Link> */}
 
      </div>  ) :   (
                         <Fragment>

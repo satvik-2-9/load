@@ -4,6 +4,7 @@ import { allUsers } from '../actions/authactions'
 import { MDBDataTable } from 'mdbreact'
 import { DropdownButton, Dropdown,Button } from 'react-bootstrap'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
+
 import './styles/dashboard.css'
 import { Link } from 'react-router-dom'
 
@@ -11,12 +12,12 @@ const Dashboard=({match})=>{
     const dispatch= useDispatch();
    const {users,loading}=useSelector(state=>state.alluser)
 
-//    const userId = match.params.id;
+    const userId = match.params.id;
 
   useEffect(()=>{ 
-//    dispatch(getdriverDetails(userId)) 
+   
     dispatch(allUsers()) 
-},[dispatch])
+},[dispatch,userId])
 //  const handler = (e,id) => {
 //    //  e.preventDefault()
 //     dispatch(getdriverDetails(id)) 
@@ -69,6 +70,10 @@ const setdrivers = () => {
                 field: 'vehicletype',
             },
             {
+                label: ' type',
+                field: 'type',
+            },
+            {
                 label: 'Reffered By',
                 field: 'RefferedBy',
                 sort:'asc'
@@ -106,56 +111,35 @@ const setdrivers = () => {
         data.rows.push({
 
             id: user._id,
-            /* status: user.status,
-            Balance: user.balance,
-            online: user.online, */
-            drivername: user.firstname,
+             Status: user.status,
+            Balance:0,
+            Online: user.online, 
+            drivername: user.firstname ,
             Phone_No: user.Phone_No,
-            pic:<img src="https://partners.olacabs.com/public/img/type2.98e5661.png" className="img"></img>,
+            pic:<img src={user.Profile_Photo.url} className="img" alt={user.firstname}></img>,
             vehicletype:user.VehicleType,
-            createdby:"App",
-            createdAt:user.createdAt,
+            type:user.type,
+            createdBy:"App",
+            RegisteredOn:user.createdAt,
             Action:
             <DropdownButton className="but" id="dropdown-button-dark-example1" variant="secondary" title="Actions">
-             <Dropdown.Item href="./verifyDocuments">Add & verify documents</Dropdown.Item>
-             <Dropdown.Item href="./trackDriver">Track Driver</Dropdown.Item>
-             <Dropdown.Item href="./walletLogs">View wallet logs</Dropdown.Item>
-             <Dropdown.Item href="./updateProfile">Update profile</Dropdown.Item>
-             <Dropdown.Item href="./ProfileDetails">Detail Profile</Dropdown.Item>
+             {/* <Dropdown.Item href="./verifyDocuments">Add & verify documents</Dropdown.Item> */}
+             <Link to={`/admin/driver/vehicledetails/${user._id}`}> Add & verify documents</Link>
+             <hr />
+             <Link to="./trackDriver">Track Driver</Link>
+             <hr />
+             <Link to="./walletLogs">View wallet logs</Link>
+             <hr />
+             <Link to="./updateProfile">Update profile</Link>
+             <hr />
+             {/* <Dropdown.Item href="./ProfileDetails">Detail Profile</Dropdown.Item> */}
+             <Link to={`/admin/driver/details/${user._id}`}> Profile Details</Link>
+             <hr />
+             <Link to={`/admin/driver/${user._id}`}> 
+             Approved
+     </Link>     
             </DropdownButton>,
-            options: <Fragment>
-              
-                     {/* <button onClick={(e)=>handler(e,user._id) }
-                   
-                     > */}
-                         <Link to={`/admin/driver/${user._id}`} className="btn btn-primary py-1 px-2"> 
-     
-                             
-                        
-                             <i className="fa fa-pencil"></i>
-                          
-                             </Link>
-                         {/* </button> */}
-                        
-                
-               
-            </Fragment>,
-            Details:<Fragment>
-               {/* <button onClick={(e)=>handler(e,user._id)}> */}
-                 <Link to={`/admin/driver/details/${user._id}`} className="btn btn-primary py-1 px-2">
-                 <i className="fa fa-pencil"></i>
-                    </Link>
-                 {/* //   </button> */}
-                   
-            </Fragment>,
-            Vehicle:
-            <Fragment>
-                {/* <button onClick={(e)=>handler(e,user._id)}> */}
-                 <Link to={`/admin/driver/vehicledetails/${user._id}`} className="btn btn-primary py-1 px-2">
-                       Details
-                    </Link>
-                    {/* </button> */}
-            </Fragment>,
+           
         })
     })
 

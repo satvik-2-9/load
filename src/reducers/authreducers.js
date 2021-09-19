@@ -18,7 +18,11 @@ import { LOGIN_REQUEST,
    UPDATE_USER_FAIL,
    USER_DETAILS_REQUEST,
    USER_DETAILS_SUCCESS,
-   USER_DETAILS_FAIL} from '../constants/authconstants.js'
+   USER_DETAILS_FAIL, UPLOAD_REQUEST,
+   UPLOAD_SUCCESS,
+   UPLOAD_FAIL,UPDATE_IMAGES_REQUEST,
+   UPDATE_IMAGES_SUCCESS,
+   UPDATE_IMAGES_FAIL} from '../constants/authconstants.js'
 
 
 export const authReducer=(state={user:{}},action)=>{
@@ -170,6 +174,75 @@ export const driverDetailsReducer = (state = { driver: {},driver1:{} }, action) 
             }
 
         case USER_DETAILS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state;
+    }
+}
+
+
+export const uploadReducer = (state = {}, action) => {
+    switch (action.type) {
+
+        case UPLOAD_REQUEST:
+            return {
+                ...state,
+                loading: true
+           }
+
+        case UPLOAD_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                image: action.payload,
+            }
+
+        case UPLOAD_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state;
+    }
+}
+
+export const updateimagesReducer = (state = { images: {} }, action) => {
+    switch (action.type) {
+
+        case UPDATE_IMAGES_REQUEST:
+            return {
+                ...state,
+                loading: true
+           }
+
+        case UPDATE_IMAGES_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                images: action.payload,
+            }
+
+        case UPDATE_IMAGES_FAIL:
             return {
                 ...state,
                 loading: false,
