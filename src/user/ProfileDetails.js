@@ -89,11 +89,7 @@ function ProfileDetails() {
   
                     
                     
-                    
-
-  <Button variant="primary" type="submit" className="bt2">
-    Submit
-  </Button>
+           
 </Form>
                 
             </div> 
