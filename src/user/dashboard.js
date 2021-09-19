@@ -120,8 +120,8 @@ const setdrivers = () => {
              <Dropdown.Item href="./verifyDocuments">Add & verify documents</Dropdown.Item>
              <Dropdown.Item href="./trackDriver">Track Driver</Dropdown.Item>
              <Dropdown.Item href="./walletLogs">View wallet logs</Dropdown.Item>
-             <Dropdown.Item href="#/action-3">Update profile</Dropdown.Item>
-             <Dropdown.Item href="#/action-3">Detail Profile</Dropdown.Item>
+             <Dropdown.Item href="./updateProfile">Update profile</Dropdown.Item>
+             <Dropdown.Item href="./ProfileDetails">Detail Profile</Dropdown.Item>
             </DropdownButton>,
             options: <Fragment>
               

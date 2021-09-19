@@ -10,7 +10,7 @@
     background-image: linear-gradient(to left, #fad961, #f76b1c);
 }
 .bottom{
-    height: 100vh;
+    height: 100%;
     background-color: whitesmoke;
     padding-right: 5%;
     padding-top: 5%;
