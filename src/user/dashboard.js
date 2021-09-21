@@ -4,6 +4,7 @@ import { allUsers } from '../actions/authactions'
 import { MDBDataTable } from 'mdbreact'
 import { DropdownButton, Dropdown,Button } from 'react-bootstrap'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
+import {Loader} from './loader.js'
 
 import './styles/dashboard.css'
 import { Link } from 'react-router-dom'
@@ -61,11 +62,6 @@ const setdrivers = () => {
                 sort: 'asc'
             },
             {
-                label: 'pic',
-                field: 'pic',
-                sort:'asc'
-            },
-            {
                 label: 'vehicle type',
                 field: 'vehicletype',
             },
@@ -116,7 +112,6 @@ const setdrivers = () => {
             Online: user.online, 
             drivername: user.firstname ,
             Phone_No: user.Phone_No,
-            pic:<img src={user.Profile_Photo.url} className="img" alt={user.firstname}></img>,
             vehicletype:user.VehicleType,
             type:user.type,
             createdBy:"App",
@@ -130,14 +125,11 @@ const setdrivers = () => {
              <hr />
              <Link to="./walletLogs">View wallet logs</Link>
              <hr />
-             <Link to="./updateProfile">Update profile</Link>
+             <Link to={`./updateProfile/${user._id}`}>Update profile</Link>
              <hr />
              {/* <Dropdown.Item href="./ProfileDetails">Detail Profile</Dropdown.Item> */}
              <Link to={`/admin/driver/details/${user._id}`}> Profile Details</Link>
-             <hr />
-             <Link to={`/admin/driver/${user._id}`}> 
-             Approved
-     </Link>     
+             
             </DropdownButton>,
            
         })
@@ -149,7 +141,7 @@ const setdrivers = () => {
     return (
     <Fragment>
           
-
+          {loading ?<Loader/> : (
             <div className="col-12 col-md-10">
                 <Fragment>
                     <h1 className="my-5">All Drivers</h1>
@@ -187,11 +179,11 @@ const setdrivers = () => {
                           
                 <Button variant="secondary" className="butt">Filter</Button>
                 <Button variant="secondary" className="butt">Export to Excel </Button>
-                <input type="text" placeholder="Search"></input>
+             
                </div>
                 
             </div>
-                    {loading ?<h2> data not available</h2> : (
+                    {/* {loading ?<Loader/> : ( */}
                         <MDBDataTable
                             data={setdrivers()}
                             className="px-3"
@@ -199,12 +191,12 @@ const setdrivers = () => {
                             striped
                             hover
                         />
-                    )}
+                    {/* )} */}
 
                 </Fragment>
             </div>
       
-
+      )}
     </Fragment>
 )
 }

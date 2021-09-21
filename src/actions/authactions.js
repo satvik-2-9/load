@@ -160,8 +160,7 @@ export const getdriverDetails = (id) => async (dispatch) => {
         const { data } = await axios.get(`/api/admin/alldrivers/${id}`)
         dispatch({
             type: USER_DETAILS_SUCCESS,
-            payload: data.driverdata.driver,
-            payload1:data.driverdata.vehicle[0]
+            payload: data.driver,
         })
 
     } catch (error) {
@@ -204,11 +203,11 @@ export const update=(id,userData)=>async(dispatch)=>{
             }
         }
 
-        const { data } = await axios.put(`/api/admin/update/driver/${id}`,{userdata:userData},config)
+        const {data}= await axios.put(`/api/admin/update/driver/${id}`,{userdata:userData},config)
         console.log(userData);
         dispatch({
             type: UPDATE_IMAGES_SUCCESS,
-            payload: data
+            payload: data.success
         })
    
     } catch (error) {

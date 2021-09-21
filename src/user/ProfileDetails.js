@@ -10,7 +10,7 @@ const  ProfileDetails=({match})=> {
 
 
   const dispatch= useDispatch();
-  const {driver,driver1}=useSelector(state=>state.driverdetails)
+  const {driver}=useSelector(state=>state.driverdetails)
 
   const driverId = match.params.id;
 
@@ -28,9 +28,9 @@ useEffect(()=>{
             <Form>
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridName">
-      <Form.Label>Driver Name</Form.Label>
+      <Form.Label>Driver first Name</Form.Label>
  
-      <Form.Control type="text" placeholder={driver.firstname} />
+      <Form.Control type="text" placeholder={driver.firstname} disabled/>
       
     </Form.Group>
 
@@ -40,7 +40,12 @@ useEffect(()=>{
                             
       </Form.Group>
   </Row>
-
+  <Form.Group as={Col} controlId="formGridName">
+      <Form.Label>Driver last Name</Form.Label>
+ 
+      <Form.Control type="text" placeholder={driver.lastname} disabled/>
+      
+    </Form.Group>
  <Form.Group  className="mb-3" controlId="formGridMobile">
     <Form.Label>Mobile Number</Form.Label>
   
@@ -49,17 +54,17 @@ useEffect(()=>{
 
   <Form.Group  className="mb-3" controlId="formLicense">
     <Form.Label>License No</Form.Label>
-    <Form.Control placeholder={driver.Driving_License_No}/>
+    <Form.Control placeholder={driver.Driving_License_No} disabled/>
   </Form.Group>
 
   <Row className="mb-3">
-    <Form.Group as={Col} controlId="formLicenseValidity">
+    {/* <Form.Group as={Col} controlId="formLicenseValidity">
       <Form.Label>License Valididty date</Form.Label>
-      <DatePickerComponent placeholder="Select Date"></DatePickerComponent>
+      <DatePickerComponent placeholder="2031" disabled></DatePickerComponent>
                 
-    </Form.Group>
+    </Form.Group> */}
 
-    <Form.Group as={Col} controlId="formVehicleBrand">
+    {/* <Form.Group as={Col} controlId="formVehicleBrand">
       <Form.Label>Vehicle Brand</Form.Label>
       <Form.Control />
     </Form.Group>
@@ -67,45 +72,45 @@ useEffect(()=>{
     <Form.Group as={Col} controlId="formBrand">
       <Form.Label>Vehicle Brand</Form.Label>
       <Form.Control />
-    </Form.Group>
+    </Form.Group> */}
   </Row>
-
+{/* 
   <Form.Group className="mb-3" id="formModel">
       <Form.Label>Vehicle Model</Form.Label>
 
-      <Form.Control placeholder={driver.VehicleType} />
-  </Form.Group>
+      <Form.Control placeholder={driver.VehicleType} disabled />
+  </Form.Group> */}
   <Form.Group className="mb-3" id="formVehicleName">
       <Form.Label>Vehicle Name</Form.Label>
-      <Form.Control placeholder={driver.VehicleType}/>
+      <Form.Control placeholder={driver.VehicleType} disabled/>
   </Form.Group>
   <Form.Group className="mb-3" id="formCategory">
       <Form.Label>Vehicle Category</Form.Label>
-      <DropdownButton className="but" id="dropdown-button-dark-example1"  variant="secondary" title="online">
-                    <Dropdown.Item href="#/action-1">Open</Dropdown.Item>
+      <Form.Control className="but" id="dropdown-button-dark-example1"  variant="secondary" title="online" placeholder={driver.type} disabled>
+                    {/* <Dropdown.Item href="#/action-1">Open</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Close</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Any</Dropdown.Item>
-        </DropdownButton>
+                    <Dropdown.Item href="#/action-3">Any</Dropdown.Item> */}
+        </Form.Control>
    </Form.Group>
-   <Form.Group className="mb-3" id="formVehicleColor">
+   {/* <Form.Group className="mb-3" id="formVehicleColor">
       <Form.Label>Vehicle Colour</Form.Label>
-      <Form.Control />
-   </Form.Group>
+      <Form.Control /> */}
+   {/* </Form.Group> */}
    <Form.Group className="mb-3" id="formVehicleRegNum">
       <Form.Label>Vehicle registration number</Form.Label>
-      <Form.Control placeholder ={driver1.Vehicle_RC_Number}/>
+      <Form.Control placeholder ={driver.Vehicle_RC_Number} disabled/>
   </Form.Group>
-  <Form.Group className="mb-3" id="formVehiclePurchase">
+  {/* <Form.Group className="mb-3" id="formVehiclePurchase">
       <Form.Label>Vehicle Purchase year</Form.Label>
       <Form.Control />
-  </Form.Group>
+  </Form.Group> */}
   <Form.Group className="mb-3" id="formEmail">
-      <Form.Label>Email</Form.Label>
-      <Form.Control />
+      {/* <Form.Label>Email</Form.Label>
+      <Form.Control /> */}
                     </Form.Group>
                     <Form.Group className="mb-3" id="formAddress">
       <Form.Label>Address</Form.Label>
-      <Form.Control />
+      <Form.Control placeholder={`${driver.locality}, ${driver.city}`} disabled />
   </Form.Group>
   
                     

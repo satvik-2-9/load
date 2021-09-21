@@ -22,7 +22,8 @@ import { LOGIN_REQUEST,
    UPLOAD_SUCCESS,
    UPLOAD_FAIL,UPDATE_IMAGES_REQUEST,
    UPDATE_IMAGES_SUCCESS,
-   UPDATE_IMAGES_FAIL} from '../constants/authconstants.js'
+   UPDATE_IMAGES_FAIL,
+   UPDATE_IMAGES_RESET} from '../constants/authconstants.js'
 
 
 export const authReducer=(state={user:{}},action)=>{
@@ -156,7 +157,7 @@ export const userReducer = (state = {}, action) => {
     }
 }
 
-export const driverDetailsReducer = (state = { driver: {},driver1:{} }, action) => {
+export const driverDetailsReducer = (state = { driver: {}}, action) => {
     switch (action.type) {
 
         case USER_DETAILS_REQUEST:
@@ -169,8 +170,7 @@ export const driverDetailsReducer = (state = { driver: {},driver1:{} }, action) 
             return {
                 ...state,
                 loading: false,
-                driver: action.payload,
-                driver1:action.payload1
+                driver: action.payload
             }
 
         case USER_DETAILS_FAIL:
@@ -239,9 +239,13 @@ export const updateimagesReducer = (state = { images: {} }, action) => {
             return {
                 ...state,
                 loading: false,
-                images: action.payload,
+                isUpdated: action.payload,
             }
-
+case UPDATE_IMAGES_RESET:
+    return{
+        ...state,
+        isUpdated:false
+    }
         case UPDATE_IMAGES_FAIL:
             return {
                 ...state,
