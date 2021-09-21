@@ -1,8 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import './styles/VerifyDocuments.css'
-import { MDBDataTable } from 'mdbreact'
-import  {Button} from 'react-bootstrap'
+import  {Form,Row,Col,Card,Button} from 'react-bootstrap'
 import { update } from '../actions/authactions'
 import axios from 'axios'
 import { useAlert } from 'react-alert'
@@ -188,8 +187,8 @@ const Onclick = (e,id) => {
     }
     return (
         
-        <div>
-            <div className="head"> Welcome admin Dashboard !</div>
+    <div className="wrapper2">
+            {/* <div className="head"> Welcome admin Dashboard !</div>
            <form onSubmit={onsubmithandler} encType="multipart/form-data">
             <div className="bottom">
            
@@ -205,9 +204,149 @@ const Onclick = (e,id) => {
                 <Button   variant="dark" className="butt"  onClick={(e)=>{Onclick(e,driver._id)}}    >Verify</Button>
 
             </div>
-            </form>
-            {/* variant="dark" className="butt"       */}
-              </div>
+            </form> */}
+            <div className="first">
+                <div className="a">
+                <img src={driver.Profile_Photo ? driver.Profile_Photo.url : ''} alt='png'></img>
+                </div>
+                <div className="b">
+                    <ul>
+                        <li>Driver ID: </li>
+                        <li>Name: </li>
+                        <li>Mobile Number: </li>
+                        <li>Alternate Number: </li>
+                        <li>Emergency Number: </li>
+                  </ul>
+                </div>
+                <div className="c"><ul><li>Vehicle number: </li> <li>Vehicle Type: </li> <li>Vehicle Sub:</li></ul></div>
+            </div>
+            <div className="second">
+                <div className="a">
+                    <img src={driver.PAN_Photo?driver.PAN_Photo.url:''}alt='png'></img>
+                </div>
+                <div className="b">
+                <Form>
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                        <Form.Label column sm="2">
+                        Account Number: 
+                        </Form.Label>
+                        <Col sm="10">
+                        <Form.Control type="plaintext" readOnly controlId="formPlaintext" />
+                        </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                        <Form.Label column sm="2">
+                        Bank Name: 
+                        </Form.Label>
+                        <Col sm="10">
+                        <Form.Control type="password"  />
+                        </Col>
+                                            </Form.Group>
+                                            <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                        <Form.Label column sm="2">
+                        IFSC Code: 
+                        </Form.Label>
+                        <Col sm="10">
+                        <Form.Control type="password"  />
+                        </Col>
+                    </Form.Group>
+                    </Form>
+                </div>
+            </div>
+            <div className="third">
+                <div className="a">
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Aadhar</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Pan Card</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Driving License</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>RC</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                    </Card>
+                </div>
+                <div className="b">
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Insurance</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                            <div className="but">
+                            <Button variant="light" className="ex">Expiry Date</Button>
+                            <Button variant="light">Upload Icon</Button>
+                            </div>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Vehicle Front</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Vehicle Back</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Title>Vaccine Certificate</Card.Title>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                        <Card.Text>
+                        Document number : {}
+                        </Card.Text>
+                        <Button variant="light">Upload Icon</Button>
+                    </Card.Body>
+                    </Card>  
+                </div>
+    
+            </div>
+           
+    
+        </div>
     )
 }
 

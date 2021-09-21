@@ -1,3 +1,12 @@
+
+.wrapper2 {
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    font-weight: 700;
+}
 .head{
     padding:5% ; 
     align-items: center;
@@ -14,4 +23,122 @@ img{
     height: auto;
     max-width: 150px;
     max-height: 150px;
+}
+.first{
+    background-color: white;
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    border: solid 1px black;
+    border-radius: 20px;
+    
+}
+.wrapper2{
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+}
+.first .a{
+    padding-left:12%;
+}
+.first .b{
+    padding-top: 1%;
+    padding-left:2%;
+}
+.first .c{
+    padding-top: 1%;
+    padding-left:12%;
+}
+.second{
+    background-color: white;
+    margin-top:1%;
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+.second .a{
+    margin-top:4%;
+    padding-left: 12%;
+}
+.second .b{
+    padding-left:10%;
+}
+.wrapper form {
+    padding: 0.3rem 3rem;
+    font-size: small;
+}
+.card-text {
+    font-weight: bolder;
+    color:#FF7600;
+    margin-bottom: 1.4rem;
+    font-size: 1rem;
+    text-align: center;
+    border-width: 10px;
+}
+.third{
+    background-color: white;
+    margin-top:1%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+.card {
+    height: 100%;
+    /* width: 100%; */
+    font-size: small !important;
+    text-align: center;
+    padding:5px;
+}
+.third .a{
+    display: flex;
+    flex-direction: row;
+}
+.third .b{
+    display: flex;
+    flex-direction: row;
+}
+.first ul{
+    list-style: none;
+}
+.card-img-top {
+    margin-left: 13%;
+    display: block;
+    width: 200px;
+    height: 150px;
+}
+img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 100%;
+}
+.ex{
+    margin-bottom:2px;
+}
+.btn{
+    font-weight: bolder;
+    color:#FF7600;
+}
+input{
+ margin-left: 10%;
+}
+.col-form-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: large;
+    line-height: 1.2;
+    color:#FF7600;
+}
+.card-title {
+    margin-bottom: .75rem;
+    font-weight: bolder;
 }
