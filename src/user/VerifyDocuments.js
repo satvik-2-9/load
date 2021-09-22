@@ -193,6 +193,9 @@ const Onclick = (e,id) => {
     const [front, setfront] = useState(false);
     const [back, setback] = useState(false);
     const [vaccine, setvaccine] = useState(false);
+    const [r1, setr1] = useState(true);
+    const [r2, setr2] = useState(true);
+    const [r3, setr3] = useState(true); 
 
     
     return (
@@ -244,10 +247,11 @@ const Onclick = (e,id) => {
                         Account Number: 
                         </Form.Label>
                         <Col sm="10">
-                        <Form.Control type="plaintext" readOnly controlId="formPlaintext" />
+                        <Form.Control type="plaintext" readOnly={r1} controlId="formPlaintext" />
                         </Col>
                      </Form.Group>
-                     <button className="bt">Edit icon</button>
+                     
+                    <button type="button" className="bt" onClick={() => { setr1(!r1) }}>Edit icon</button>
                     
                    </div>
                     <div className="wrap">
@@ -256,10 +260,10 @@ const Onclick = (e,id) => {
                         Bank Name: 
                         </Form.Label>
                         <Col sm="10">
-                        <Form.Control type="password"  />
+                        <Form.Control type="password" readOnly={r2} />
                         </Col>
-                            </Form.Group>
-                            <button className="bt">Edit icon</button>
+                    </Form.Group>
+                            <button type="button"  className="bt" onClick={() => { setr2(!r2) }}>Edit icon</button>
                     </div>
                     <div className="wrap">
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
@@ -267,10 +271,10 @@ const Onclick = (e,id) => {
                         IFSC Code: 
                         </Form.Label>
                         <Col sm="10">
-                        <Form.Control type="password"  />
+                        <Form.Control type="password"  readOnly={r3} />
                         </Col>
                             </Form.Group>
-                            <button className="bt">Edit icon</button>
+                            <button type="button"  className="bt" onClick={()=>{setr3(!r3)}}>Edit icon</button>
                     </div>
                     </Form>
                 </div>
