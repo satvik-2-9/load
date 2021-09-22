@@ -1,13 +1,16 @@
-import React,{Fragment,useEffect} from 'react'
+import React,{Fragment,useEffect,useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import { allUsers } from '../actions/authactions'
 import { MDBDataTable } from 'mdbreact'
 import { DropdownButton, Dropdown,Button } from 'react-bootstrap'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
 import {Loader} from './loader.js'
+import Modal from './Modal';
 
 import './styles/dashboard.css'
 import { Link } from 'react-router-dom'
+
+
 
 const Dashboard=({match})=>{
     const dispatch= useDispatch();
@@ -27,6 +30,15 @@ const Dashboard=({match})=>{
 //  setTimeout((e,id) => {
 //     handler(e,id)
 //   }, 2000);
+    const [pop, setpop] = useState(false);
+    function off() {
+        window.location.href = "./dashboard"; 
+    }
+    function st(){
+        setpop(false);
+        window.location.href = "./dashboard";
+    }
+
 
 const setdrivers = () => {
     const data = {
@@ -119,7 +131,8 @@ const setdrivers = () => {
             Action:
             <DropdownButton className="but" id="dropdown-button-dark-example1" variant="secondary" title="Actions">
              {/* <Dropdown.Item href="./verifyDocuments">Add & verify documents</Dropdown.Item> */}
-             <Link to={`/admin/driver/vehicledetails/${user._id}`}> Add & verify documents</Link>
+            <Link to={`/admin/driver/vehicledetails/${user._id}`}> Add & verify documents</Link>
+                    
              <hr />
              <Link to="./trackDriver">Track Driver</Link>
              <hr />
@@ -130,6 +143,8 @@ const setdrivers = () => {
              {/* <Dropdown.Item href="./ProfileDetails">Detail Profile</Dropdown.Item> */}
              <Link to={`/admin/driver/details/${user._id}`}> Profile Details</Link>
              
+             <Button onClick={() => { setpop(true) }} variant="primary" > Block !</Button>
+             <Modal open={pop} onClose={st} off={off} ></Modal>
             </DropdownButton>,
            
         })
