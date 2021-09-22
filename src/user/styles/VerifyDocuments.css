@@ -183,11 +183,26 @@ input{
 .form-control{
     width:auto;
 }
-.btm{
+.btm1{
     background-color:#FF7600 ;
     color:white;
-    margin-left: 80%;
+    margin-left: 65%;
     margin-bottom: 3%;
     border-radius: 15%;
     font-size: x-large;
+}
+.btm2{
+    background-color:#FF7600 ;
+    color:white;
+    margin-bottom: 3%;
+    border-radius: 15%;
+    margin-left: 2%;
+    font-size: x-large;
+}
+.pt{
+    padding-top:2%;
+}
+.c{
+    display: flex;
+    flex-direction: row;
 }

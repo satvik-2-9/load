@@ -185,6 +185,16 @@ const Onclick = (e,id) => {
         // });
         return data; 
     }
+    const [aadhar, setaadhar] = useState(false);
+    const [pan, setpan] = useState(false);
+    const [dl, setdl] = useState(false);
+    const [rc, setrc] = useState(false);
+    const [insure, setins] = useState(false);
+    const [front, setfront] = useState(false);
+    const [back, setback] = useState(false);
+    const [vaccine, setvaccine] = useState(false);
+
+    
     return (
         
     <div className="wrapper2">
@@ -273,8 +283,11 @@ const Onclick = (e,id) => {
                     <Card.Body>
                         <Card.Text>
                         Document number : {}
-                        </Card.Text>
-                        <Button variant="light"> <div className="clr"> Upload Icon</div></Button>
+                            </Card.Text>
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setaadhar(!aadhar)}}> <div className="clr"> Upload Icon</div></Button>
+                                {aadhar?<input type="file" className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -284,7 +297,11 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
+                        
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setpan(!pan)}}> <div className="clr"> Upload Icon</div></Button>
+                                {pan?<input type="file" className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -294,7 +311,10 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setdl(!dl)}}> <div className="clr"> Upload Icon</div></Button>
+                                {dl?<input type="file" className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -304,7 +324,10 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setrc(!rc)}}> <div className="clr"> Upload Icon</div></Button>
+                                {rc?<input type="file" className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                     </Card>
                 </div>
@@ -316,10 +339,14 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                            <div className="but">
-                            <Button variant="light" className="ex">Expiry Date</Button>
-                            <Button variant="light"><div className="clr"> Upload Icon</div></Button>
-                            </div>
+                        <div className="ed">
+                        <div className="but">
+                                <Button variant="light" className="ex">Expiry Date</Button>
+                                <Button variant="light" onClick={() => { setins(!insure) }}> <div className="clr"> Upload Icon</div></Button>
+                                {insure?<input type="file" className="pt"></input>:null}
+                                </div>
+                        </div>
+                            
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -329,7 +356,10 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setfront(!front)}}> <div className="clr"> Upload Icon</div></Button>
+                                {front?<input type="file" className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -339,7 +369,10 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setback(!back)}}> <div className="clr"> Upload Icon</div></Button>
+                                {back?<input type="file"  className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -349,12 +382,16 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
+                        <div className="ed">
+                                <Button variant="light" onClick={()=>{setvaccine(!vaccine)}}> <div className="clr"> Upload Icon</div></Button>
+                                {vaccine?<input type="file" className="pt"></input>:null}
+                        </div>
                     </Card.Body>
                     </Card>  
                 </div>
                 <div className="c">
-                    <button className="btm">Approve</button>
+                    <button className="btm1">Approve</button>
+                    <button className="btm2">Update</button>
                 </div>
     
             </div>
