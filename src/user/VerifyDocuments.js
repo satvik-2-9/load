@@ -210,15 +210,17 @@ const Onclick = (e,id) => {
                 <img src={driver.Profile_Photo ? driver.Profile_Photo.url : ''} alt='png'></img>
                 </div>
                 <div className="b">
-                    <ul>
-                        <li>Driver ID: </li>
-                        <li>Name: </li>
-                        <li>Mobile Number: </li>
-                        <li>Alternate Number: </li>
-                        <li>Emergency Number: </li>
-                  </ul>
+                    <div>
+                        <div className="s" > <div className="ff driver" >Driver ID:  </div><div className="ssa"><button className="bt">Edit icon</button></div> </div> 
+                        <div className="s" > <div className="ff">Name: </div><div className="ssb"><button className="bt">Edit icon</button></div> </div>
+                        <div className="s" > <div className="ff">Mobile Number:</div><div className="ssc"><button className="bt">Edit icon</button></div> </div>
+                        <div>Alternate Number: </div>
+                        <div>Emergency Number: </div> 
+           
+                   
+                  </div>
                 </div>
-                <div className="c"><ul><li>Vehicle number: </li> <li>Vehicle Type: </li> <li>Vehicle Sub:</li></ul></div>
+                <div className="c"><ul><li className="driver">Vehicle number: </li> <li className="driver">Vehicle Type: </li> <li className="driver">Vehicle Sub:</li></ul></div>
             </div>
             <div className="second">
                 <div className="a">
@@ -226,15 +228,19 @@ const Onclick = (e,id) => {
                 </div>
                 <div className="b">
                 <Form>
-                    <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                    <div className="wrap">
+                     <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
                         <Form.Label column sm="2">
                         Account Number: 
                         </Form.Label>
                         <Col sm="10">
                         <Form.Control type="plaintext" readOnly controlId="formPlaintext" />
                         </Col>
-                    </Form.Group>
-
+                     </Form.Group>
+                     <button className="bt">Edit icon</button>
+                    
+                   </div>
+                    <div className="wrap">
                     <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
                         <Form.Label column sm="2">
                         Bank Name: 
@@ -242,15 +248,20 @@ const Onclick = (e,id) => {
                         <Col sm="10">
                         <Form.Control type="password"  />
                         </Col>
-                                            </Form.Group>
-                                            <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                            </Form.Group>
+                            <button className="bt">Edit icon</button>
+                    </div>
+                    <div className="wrap">
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
                         <Form.Label column sm="2">
                         IFSC Code: 
                         </Form.Label>
                         <Col sm="10">
                         <Form.Control type="password"  />
                         </Col>
-                    </Form.Group>
+                            </Form.Group>
+                            <button className="bt">Edit icon</button>
+                    </div>
                     </Form>
                 </div>
             </div>
@@ -263,7 +274,7 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"> <div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -273,7 +284,7 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -283,7 +294,7 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -293,7 +304,7 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                     </Card>
                 </div>
@@ -307,7 +318,7 @@ const Onclick = (e,id) => {
                         </Card.Text>
                             <div className="but">
                             <Button variant="light" className="ex">Expiry Date</Button>
-                            <Button variant="light">Upload Icon</Button>
+                            <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                             </div>
                     </Card.Body>
                 </Card>
@@ -318,7 +329,7 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -328,7 +339,7 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -338,9 +349,12 @@ const Onclick = (e,id) => {
                         <Card.Text>
                         Document number : {}
                         </Card.Text>
-                        <Button variant="light">Upload Icon</Button>
+                        <Button variant="light"><div className="clr"> Upload Icon</div></Button>
                     </Card.Body>
                     </Card>  
+                </div>
+                <div className="c">
+                    <button className="btm">Approve</button>
                 </div>
     
             </div>
