@@ -195,8 +195,17 @@ const Onclick = (e,id) => {
     const [vaccine, setvaccine] = useState(false);
     const [r1, setr1] = useState(true);
     const [r2, setr2] = useState(true);
-    const [r3, setr3] = useState(true); 
-
+    const [r3, setr3] = useState(true);
+    const [eaadhar, seteaadhar] = useState(false);
+    const [epan, setepan] = useState(false);
+    const [edl, setedl] = useState(false);
+    const [erc, seterc] = useState(false);
+    const [einsure, seteins] = useState(false);
+    const [efront, setefront] = useState(false);
+    const [eback, seteback] = useState(false);
+    const [evaccine, setevaccine] = useState(false);
+    
+    
     
     return (
         
@@ -285,11 +294,16 @@ const Onclick = (e,id) => {
                     <Card.Title>Aadhar</Card.Title>
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
-                        <Card.Text>
-                        Document number : {}
+                            <Card.Text>
+                            <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={eaadhar}></textarea>    
+                                <button type="button" className="btr" onClick={() => { seteaadhar(!eaadhar) }}>Edit icon</button>
+                            
+                            </div>
                             </Card.Text>
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setaadhar(!aadhar)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setaadhar(!aadhar)}}> <div className="clr"> Upload Option</div></Button>
                                 {aadhar?<input type="file" className="pt"></input>:null}
                         </div>
                     </Card.Body>
@@ -299,11 +313,16 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={epan}></textarea>    
+                                <button type="button" className="btr" onClick={() => { setepan(!epan) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setpan(!pan)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setpan(!pan)}}> <div className="clr"> Upload Option</div></Button>
                                 {pan?<input type="file" className="pt"></input>:null}
                         </div>
                     </Card.Body>
@@ -313,10 +332,15 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={edl}></textarea>    
+                                <button type="button" className="btr" onClick={() => { setedl(!edl) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setdl(!dl)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setdl(!dl)}}> <div className="clr"> Upload Option</div></Button>
                                 {dl?<input type="file" className="pt"></input>:null}
                         </div>
                     </Card.Body>
@@ -326,10 +350,15 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={erc}></textarea>    
+                                <button type="button" className="btr" onClick={() => { seterc(!erc) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setrc(!rc)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setrc(!rc)}}> <div className="clr"> Upload Option</div></Button>
                                 {rc?<input type="file" className="pt"></input>:null}
                         </div>
                     </Card.Body>
@@ -341,12 +370,17 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={einsure}></textarea>    
+                                <button type="button" className="btr" onClick={() => { seteins(!einsure) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         <div className="ed">
                         <div className="but">
                                 <Button variant="light" className="ex">Expiry Date</Button>
-                                <Button variant="light" onClick={() => { setins(!insure) }}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={() => { setins(!insure) }}> <div className="clr"> Upload Option</div></Button>
                                 {insure?<input type="file" className="pt"></input>:null}
                                 </div>
                         </div>
@@ -358,10 +392,15 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={efront}></textarea>    
+                                <button type="button" className="btr" onClick={() => { setefront(!efront) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setfront(!front)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setfront(!front)}}> <div className="clr"> Upload Option</div></Button>
                                 {front?<input type="file" className="pt"></input>:null}
                         </div>
                     </Card.Body>
@@ -371,10 +410,15 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={eback}></textarea>    
+                                <button type="button" className="btr" onClick={() => { seteback(!eback) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setback(!back)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setback(!back)}}> <div className="clr"> Upload Option</div></Button>
                                 {back?<input type="file"  className="pt"></input>:null}
                         </div>
                     </Card.Body>
@@ -384,10 +428,15 @@ const Onclick = (e,id) => {
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>
                         <Card.Text>
-                        Document number : {}
+                        <div className="ty">
+                                Document number : { }
+                                <textarea className="mk" rows="1" cols="40" readOnly={evaccine}></textarea>    
+                                <button type="button" className="btr" onClick={() => { setevaccine(!evaccine) }}>Edit icon</button>
+                            
+                            </div>
                         </Card.Text>
                         <div className="ed">
-                                <Button variant="light" onClick={()=>{setvaccine(!vaccine)}}> <div className="clr"> Upload Icon</div></Button>
+                                <Button variant="light" onClick={()=>{setvaccine(!vaccine)}}> <div className="clr"> Upload Option</div></Button>
                                 {vaccine?<input type="file" className="pt"></input>:null}
                         </div>
                     </Card.Body>

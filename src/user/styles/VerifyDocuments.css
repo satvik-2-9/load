@@ -206,3 +206,23 @@ input{
     display: flex;
     flex-direction: row;
 }
+.ty{
+    display: flex;
+    flex-direction: row;
+}
+.btr{
+    border-radius: 100%;
+    background-color:#FF7600 ;
+    color: white;
+    margin-left: 2%;
+    font-size: 0.4rem;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+}
+.ip2{
+    width: 50%;
+}
+.mk{
+    margin-left: 5%;
+}

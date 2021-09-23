@@ -46,6 +46,8 @@ export default function Modal({ open, children, onClose,off}) {
             
             <div style={OVERLAY_STYLES} />
             <div style={MODAL_STYLES} className="p">
+            <div className="pl">
+                <i onClick={()=>{window.location.href="./dashboard"}} class="fas fa-times cross"></i>
                 <div className="cj">
                 {bl?null:<Button onClick={()=>{setbl(true)}}>Block</Button>}
                     {bl ?
@@ -53,6 +55,10 @@ export default function Modal({ open, children, onClose,off}) {
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Enter Reason</Form.Label>
                             <Form.Control type="text" placeholder="enter reason" size="50" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Enter ID</Form.Label>
+                            <Form.Control type="text" placeholder="enter ID" size="50" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -68,9 +74,10 @@ export default function Modal({ open, children, onClose,off}) {
                         </Form> 
                     
                     : null}
-                </div>
-                {bl ? null : <Button className="unb" onClick={off}>UnBlock</Button>}
+                    {bl ? null : <Button className="unb" onClick={off}>UnBlock</Button>}
                  {children}
+                  </div>
+                </div>
             </div>
         </>,
                 document.getElementById('portal')
