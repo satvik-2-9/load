@@ -196,14 +196,14 @@ const Onclick = (e,id) => {
     const [r1, setr1] = useState(true);
     const [r2, setr2] = useState(true);
     const [r3, setr3] = useState(true);
-    const [eaadhar, seteaadhar] = useState(false);
-    const [epan, setepan] = useState(false);
-    const [edl, setedl] = useState(false);
-    const [erc, seterc] = useState(false);
-    const [einsure, seteins] = useState(false);
-    const [efront, setefront] = useState(false);
-    const [eback, seteback] = useState(false);
-    const [evaccine, setevaccine] = useState(false);
+    const [eaadhar, seteaadhar] = useState(true);
+    const [epan, setepan] = useState(true);
+    const [edl, setedl] = useState(true);
+    const [erc, seterc] = useState(true);
+    const [einsure, seteins] = useState(true);
+    const [efront, setefront] = useState(true);
+    const [eback, seteback] = useState(true);
+    const [evaccine, setevaccine] = useState(true);
     
     
     
