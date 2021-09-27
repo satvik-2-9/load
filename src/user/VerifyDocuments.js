@@ -38,7 +38,7 @@ const  VerifyDocuments=({match,history})=> {
     dispatch({
         type:UPDATE_IMAGES_RESET
       })
-},[dispatch,driverId,alert,isUpdated,history])
+},)
 
 
 /* const handleimagechange=async (e)=>{
