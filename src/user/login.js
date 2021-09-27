@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {clearerrors} from '../actions/authactions'
 import { useDispatch,useSelector } from 'react-redux'
 //import { useAlert } from 'react-alert'
-
+import './styles/login.css'
 
 
 export const Login=({history})=>{
@@ -37,7 +37,7 @@ export const Login=({history})=>{
 
   <div className="row wrapper"> 
 		<div className="col-10 col-lg-5">
-        <form className="shadow-lg" >
+        <div className="shadow-lg" >
             <h1 className="mb-3 login">Login</h1>
             <div className="form-group">
               <label htmlFor="email_field">Email</label>
@@ -72,7 +72,7 @@ export const Login=({history})=>{
             </button>
          
             <Link to="/registers" className="float-right mt-3">New User?</Link>
-          </form>
+          </div>
 		  </div>
     </div>
     </Fragment>     
