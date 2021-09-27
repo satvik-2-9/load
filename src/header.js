@@ -30,7 +30,7 @@ const Header = () => {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto tmp">
                   {user && user.role==="admin" &&(<Link to="/dashboard" className="lk"> Dashboard</Link>)}
-                  <Link className="text-danger" to="/" onClick={logoutHandler}>Logout</Link>
+                  <Link className="text-danger" to="/" onClick={()=>window.location.href='/'}>Logout</Link>
 
                 </Nav>
               </Navbar.Collapse>

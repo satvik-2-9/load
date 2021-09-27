@@ -34,7 +34,7 @@ function App() {
       <Route path="/register"  component={Register}  /> 
       <Route path="/login"  component={Login}  /> 
       <Route path="/logout" component={Log} />
-
+      <Route path="/" component={Dashboard} />
 
       <ProtectedRoute path="/profile" component={Profile} exact/>
       <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact/>
