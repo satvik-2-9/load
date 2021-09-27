@@ -2,13 +2,13 @@ import React,{useEffect, useState} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import './styles/VerifyDocuments.css'
 import  {Form,Row,Col,Card,Button} from 'react-bootstrap'
-import { update } from '../actions/authactions'
-import axios from 'axios'
+/* import { update } from '../actions/authactions'
+import axios from 'axios' */
 import { useAlert } from 'react-alert'
 import { UPDATE_IMAGES_RESET } from '../constants/authconstants'
 
 
-import { updateUser, getdriverDetails} from '../actions/authactions'
+import { getdriverDetails} from '../actions/authactions'
 
 const  VerifyDocuments=({match,history})=> {
 
@@ -19,7 +19,7 @@ const  VerifyDocuments=({match,history})=> {
     const {isUpdated}=useSelector(state=>state.updateimages)
 
     const driverId = match.params.id;
-    const [obj,setobj]= useState({})
+  /*   const [obj,setobj]= useState({}) */
 
   useEffect(()=>{   
    
@@ -38,7 +38,7 @@ const  VerifyDocuments=({match,history})=> {
 },[dispatch,driverId,alert,isUpdated,history])
 
 
-const handleimagechange=async (e)=>{
+/* const handleimagechange=async (e)=>{
 const formdata=new FormData()
 formdata.append('images',e.target.files[0])
 const image= await axios.post('/api/admin/upload',formdata)
@@ -49,10 +49,10 @@ console.log("image",image.data)
   setobj({...obj,[e.target.name]:{url:image.data.path,filename:image.data.filename}})
 
 }
+ */
 
 
-
-const onsubmithandler=(e)=>{
+/* const onsubmithandler=(e)=>{
      e.preventDefault()
     console.log("objects",obj);
     
@@ -60,10 +60,6 @@ const onsubmithandler=(e)=>{
 }
 const Onclick = (e,id) => {
     e.preventDefault();
-
-    //   const formData = new FormData();
-    
-    //   formData.set('status', status);
 
       dispatch(updateUser(id, "Approved"))
       history.push('/dashboard')
@@ -184,7 +180,7 @@ const Onclick = (e,id) => {
         //     Action: <input type="file" onChange={(e)=>handleimagechange(e)} ></input>
         // });
         return data; 
-    }
+    } */
     const [aadhar, setaadhar] = useState(false);
     const [pan, setpan] = useState(false);
     const [dl, setdl] = useState(false);

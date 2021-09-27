@@ -22,7 +22,7 @@ export const Login=({history})=>{
         //    alert.error(error)
             dispatch(clearerrors())
         }
-    },[isAuthenicated,error,clearerrors,dispatch,history])
+    },)
 
     
     const submithandler=(e)=>{

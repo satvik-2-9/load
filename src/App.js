@@ -31,19 +31,19 @@ function App() {
      <Header />
      {/* <Register/>  */}
  
-        <Route path="/register"  component={Register}  /> 
-         <Route path="/login"  component={Login}  /> 
+      <Route path="/register"  component={Register}  /> 
+      <Route path="/login"  component={Login}  /> 
       <Route path="/logout" component={Log} />
 
 
-<ProtectedRoute path="/profile" component={Profile} exact/>
-<ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact/>
-<Route path="/admin/driver/details/:id"  component={ProfileDetails} exact/>
-<Route path="/admin/driver/vehicledetails/:id"  component={VerifyDocuments} exact/>
-<Route path="/verifyDocuments" component={VerifyDocuments} exact></Route>
-<Route path="/trackDriver" component={TrackDriver} exact></Route>
-<Route path="/walletLogs" component={WalletLogs} exact></Route>
-<Route path="/updateProfile/:id" component={Updateprofile} exact></Route>
+      <ProtectedRoute path="/profile" component={Profile} exact/>
+      <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact/>
+      <Route path="/admin/driver/details/:id"  component={ProfileDetails} exact/>
+      <Route path="/admin/driver/vehicledetails/:id"  component={VerifyDocuments} exact/>
+      <Route path="/verifyDocuments" component={VerifyDocuments} exact></Route>
+      <Route path="/trackDriver" component={TrackDriver} exact></Route>
+      <Route path="/walletLogs" component={WalletLogs} exact></Route>
+      <Route path="/updateProfile/:id" component={Updateprofile} exact></Route>
 
       
 

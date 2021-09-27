@@ -1,8 +1,7 @@
-import React,{Fragment,useEffect} from 'react'
+import React,{useEffect} from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 
-import { Form, Row, Col, Button, Dropdown, DropdownButton } from 'react-bootstrap'
-import { DatePickerComponent } from '@syncfusion/ej2-react-calendars'
+import { Form, Row, Col} from 'react-bootstrap'
 import './styles/ProfileDetails.css'
 import {  getdriverDetails} from '../actions/authactions'
 
