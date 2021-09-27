@@ -1,6 +1,6 @@
 import React,{Fragment,useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
-import {login,clearerrors} from '../actions/authactions'
+import {clearerrors} from '../actions/authactions'
 import { useDispatch,useSelector } from 'react-redux'
 //import { useAlert } from 'react-alert'
 
@@ -25,10 +25,10 @@ export const Login=({history})=>{
     },)
 
     
-    const submithandler=(e)=>{
+   /*  const submithandler=(e)=>{
         e.preventDefault();
         dispatch(login(email,password))
-    }
+    } */
 
     return(
         <Fragment>
@@ -37,7 +37,7 @@ export const Login=({history})=>{
 
   <div className="row wrapper"> 
 		<div className="col-10 col-lg-5">
-        <form className="shadow-lg" onSubmit={submithandler}>
+        <form className="shadow-lg" >
             <h1 className="mb-3 login">Login</h1>
             <div className="form-group">
               <label htmlFor="email_field">Email</label>
@@ -60,16 +60,17 @@ export const Login=({history})=>{
                 onChange={(e)=>setPassword(e.target.value)}
               />
             </div>
-
-  
+              
+            
             <button
               id="login_button"
               type="submit"
-              className="btn btn-block py-3 buttoncolor"
+                  className="btn btn-block py-3 buttoncolor"
+                  onClick={()=>window.location.href='/dashboard'}
             >
               LOGIN
             </button>
-
+         
             <Link to="/registers" className="float-right mt-3">New User?</Link>
           </form>
 		  </div>
