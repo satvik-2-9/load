@@ -8,6 +8,9 @@ import { useAlert } from 'react-alert'
 import { UPDATE_IMAGES_RESET } from '../constants/authconstants'
 
 
+
+/*  "proxy": "https://loadrunnerapis.herokuapp.com" */
+
 import { getdriverDetails} from '../actions/authactions'
 
 const  VerifyDocuments=({match,history})=> {
