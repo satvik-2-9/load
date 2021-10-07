@@ -59,11 +59,6 @@ const setdrivers = () => {
                 sort:'asc'
             },
             {
-                label: 'Online',
-                field: 'Online',
-                sort:'asc'
-            },
-            {
                 label: 'Name',
                 field: 'drivername',
                 sort: 'asc'
